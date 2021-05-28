@@ -26,9 +26,8 @@ if (false === (include $sPHPCodeSnifferAutoloadPath)) {
     ));
 }
 
-
 $sRootDirPath = dirname(__DIR__);
-$sBootstrapVersion = '4.5';
+$sBootstrapVersion = '5.1';
 $iMaxNestedDir = 2;
 
 $oConfiguration = new \DocumentationGenerator\Configuration(
