@@ -9,20 +9,14 @@ return [
             'title' => 'Responsive images',
             'url' => '%bootstrap-url%/content/images/#responsive-images',
             'rendering' => function (\Laminas\View\Renderer\PhpRenderer $oView) {
-                echo $oView->image(
-                    '/twbs-helper-module/img/docs/responsive.svg',
-                    ['fluid' => true, 'alt' => 'Responsive image',]
-                );
+                echo $oView->image('/twbs-helper-module/img/docs/responsive.svg', ['fluid' => true, 'alt' => '...',]);
             },
         ],
         [
             'title' => 'Image thumbnails',
             'url' => '%bootstrap-url%/content/images/#image-thumbnails',
             'rendering' => function (\Laminas\View\Renderer\PhpRenderer $oView) {
-                echo $oView->image(
-                    '/twbs-helper-module/img/docs/200x200.svg',
-                    ['thumbnail' => true, 'alt' => 'Image thumbnail',]
-                );
+                echo $oView->image('/twbs-helper-module/img/docs/200x200.svg', ['thumbnail' => true, 'alt' => '...',]);
             },
         ],
         [
@@ -31,17 +25,17 @@ return [
             'rendering' => function (\Laminas\View\Renderer\PhpRenderer $oView) {
                 echo $oView->image(
                     '/twbs-helper-module/img/docs/200x200.svg',
-                    ['rounded' => true, 'alt' => 'Image aligned left', 'class' => 'float-left']
+                    ['rounded' => true, 'alt' => '...', 'class' => 'float-start']
                 )  . PHP_EOL;
 
                 echo $oView->image(
                     '/twbs-helper-module/img/docs/200x200.svg',
-                    ['rounded' => true, 'alt' => 'Image aligned right', 'class' => 'float-right']
+                    ['rounded' => true, 'alt' => '...', 'class' => 'float-end']
                 ) . PHP_EOL;
 
                 echo $oView->image(
                     '/twbs-helper-module/img/docs/200x200.svg',
-                    ['rounded' => true, 'alt' => 'Image aligned block', 'class' => 'mx-auto d-block']
+                    ['rounded' => true, 'alt' => '...', 'class' => 'mx-auto d-block']
                 );
             },
         ],
@@ -52,7 +46,7 @@ return [
                 echo $oView->image('/twbs-helper-module/img/docs/200x200.svg', [
                     'thumbnail' => true,
                     'fluid' => true,
-                    'alt' => 'Picture image',
+                    'alt' => '...',
                     'sources' => ['/twbs-helper-module/img/docs/200x200.svg' => 'image/svg+xml'],
                 ]);
             },
