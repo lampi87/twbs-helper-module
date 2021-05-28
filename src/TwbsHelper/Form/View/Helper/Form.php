@@ -166,7 +166,8 @@ class Form extends \Laminas\Form\View\Helper\Form
                 $aRowsRendering[$sRowRenderingKey]['helper'] = [$this, 'htmlElement'];
                 $aRowsRendering[$sRowRenderingKey]['helper_params'] = [
                     'div',
-                    $this->setClassesToAttributes([], [$sRowClass]), '%content%'
+                    $this->setClassesToAttributes([], [$sRowClass]),
+                    '%content%'
                 ];
             }
         }

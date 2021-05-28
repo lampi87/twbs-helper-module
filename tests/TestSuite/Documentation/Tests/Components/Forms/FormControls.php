@@ -223,7 +223,6 @@ return [
                                 'options' => [
                                     'plaintext' => true,
                                     'label' => 'Email',
-                                    'row_class' => 'mb-2',
                                 ],
                                 'attributes' => [
                                     'type' => 'email',
@@ -238,7 +237,7 @@ return [
                                 'name' => 'password',
                                 'options' => [
                                     'label' => 'Password',
-                                    'row_class' => 'mx-sm-3 mb-2',
+                                    'row_class' => 'mx-sm-3',
                                 ],
                                 'attributes' => [
                                     'type' => 'password',

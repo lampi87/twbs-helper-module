@@ -136,7 +136,6 @@ return [
                 $oForm->get('zip')->setMessages(['Please provide a valid zip.']);
                 $oForm->get('termsAndConditions')->setMessages(['You must agree before submitting.']);
 
-
                 // Render form
                 echo $oView->form($oForm);
             },

@@ -56,6 +56,23 @@ return [
                             ],
                         ]));
                     },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+                    'expected' => '<div class="form-check">' . PHP_EOL .
+                        '    <input type="radio" name="customRadio" class="form-check-input" ' .
+                        'id="customRadio1" value="1"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customRadio1">' .
+                        'Toggle this custom radio' .
+                        '</label>' . PHP_EOL .
+                        '</div>' . PHP_EOL .
+                        '<div class="form-check">' . PHP_EOL .
+                        '    <input type="radio" name="customRadio" class="form-check-input" ' .
+                        'id="customRadio2" value="2"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customRadio2">' .
+                        'Or toggle this other custom radio' .
+                        '</label>' . PHP_EOL .
+                        '</div>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
                 ],
                 [
                     'title' => 'Inline',
@@ -84,6 +101,24 @@ return [
                             ],
                         ]));
                     },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+                    'expected' => '<div class="form-check&#x20;form-check-inline">' .
+                        PHP_EOL .
+                        '    <input type="radio" name="customRadioInline1" class="form-check-input" ' .
+                        'id="customRadioInline1" value="1"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customRadioInline1">' .
+                        'Toggle this custom radio' .
+                        '</label>' . PHP_EOL .
+                        '</div>' . PHP_EOL .
+                        '<div class="form-check&#x20;form-check-inline">' . PHP_EOL .
+                        '    <input type="radio" name="customRadioInline1" class="form-check-input" ' .
+                        'id="customRadioInline2" value="2"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customRadioInline2">' .
+                        'Or toggle this other custom radio' .
+                        '</label>' . PHP_EOL .
+                        '</div>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
                 ],
                 [
                     'title' => 'Disabled',
@@ -122,6 +157,24 @@ return [
                             'attributes' => ['disabled' => true],
                         ]));
                     },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+                    'expected' =>
+                    '<div class="custom-checkbox&#x20;custom-control">' . PHP_EOL .
+                        '    <input type="checkbox" name="custom_checkbox_disabled" id="customCheckDisabled1" ' .
+                        'disabled="disabled" class="form-check-input" value="1"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customCheckDisabled1">' .
+                        'Check this custom checkbox' .
+                        '</label>' . PHP_EOL .
+                        '</div>' . PHP_EOL .
+                        '<div class="form-check">' . PHP_EOL .
+                        '    <input type="radio" name="radioDisabled" disabled="disabled" ' .
+                        'class="form-check-input" id="customRadioDisabled2" value="1"/>' . PHP_EOL .
+                        '    <label class="form-check-label" for="customRadioDisabled2">' .
+                        'Toggle this custom radio' .
+                        '</label>' . PHP_EOL .
+                        '</div>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
                 ],
             ],
         ],
@@ -160,6 +213,23 @@ return [
                     ],
                 ]));
             },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+            'expected' => '<div class="custom-control&#x20;custom-switch">' . PHP_EOL .
+                '    <input type="checkbox" name="custom_switch" id="customSwitch1" ' .
+                'class="form-check-input" value="1"/>' . PHP_EOL .
+                '    <label class="form-check-label" for="customSwitch1">' .
+                'Toggle this switch element' .
+                '</label>' . PHP_EOL .
+                '</div>' . PHP_EOL .
+                '<div class="custom-control&#x20;custom-switch">' . PHP_EOL .
+                '    <input type="checkbox" name="custom_switch" id="customSwitch2" ' .
+                'disabled="disabled" class="form-check-input" value="1"/>' . PHP_EOL .
+                '    <label class="form-check-label" for="customSwitch2">' .
+                'Disabled switch element' .
+                '</label>' . PHP_EOL .
+                '</div>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
         ],
         [
             'title' => 'Select menu',
@@ -253,6 +323,45 @@ return [
                     'attributes' => ['size' => 3],
                 ])->setValue(''));
             },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+            'expected' => '<select name="custom_select" class="form-select">' . PHP_EOL .
+                '    <option value="" selected="selected">Open this select menu</option>' . PHP_EOL .
+                '    <option value="1">One</option>' . PHP_EOL .
+                '    <option value="2">Two</option>' . PHP_EOL .
+                '    <option value="3">Three</option>' . PHP_EOL .
+                '</select>' . PHP_EOL .
+                '<br/><br/>' . PHP_EOL .
+                '<select name="custom_select_lg" ' .
+                'class="form-select&#x20;form-select-lg&#x20;mb-3">' . PHP_EOL .
+                '    <option value="" selected="selected">Open this select menu</option>' . PHP_EOL .
+                '    <option value="1">One</option>' . PHP_EOL .
+                '    <option value="2">Two</option>' . PHP_EOL .
+                '    <option value="3">Three</option>' . PHP_EOL .
+                '</select>' . PHP_EOL .
+                '<br/><br/>' . PHP_EOL .
+                '<select name="custom_select_sm" class="form-select&#x20;form-select-sm">' . PHP_EOL .
+                '    <option value="" selected="selected">Open this select menu</option>' . PHP_EOL .
+                '    <option value="1">One</option>' . PHP_EOL .
+                '    <option value="2">Two</option>' . PHP_EOL .
+                '    <option value="3">Three</option>' . PHP_EOL .
+                '</select>' . PHP_EOL .
+                '<br/><br/>' . PHP_EOL .
+                '<select name="custom_select_multiple&#x5B;&#x5D;" multiple="multiple" ' .
+                'class="form-select">' . PHP_EOL .
+                '    <option value="" selected="selected">Open this select menu</option>' . PHP_EOL .
+                '    <option value="1">One</option>' . PHP_EOL .
+                '    <option value="2">Two</option>' . PHP_EOL .
+                '    <option value="3">Three</option>' . PHP_EOL .
+                '</select>' . PHP_EOL .
+                '<br/><br/>' . PHP_EOL .
+                '<select name="custom_select_size" size="3" class="form-select">' . PHP_EOL .
+                '    <option value="" selected="selected">Open this select menu</option>' . PHP_EOL .
+                '    <option value="1">One</option>' . PHP_EOL .
+                '    <option value="2">Two</option>' . PHP_EOL .
+                '    <option value="3">Three</option>' . PHP_EOL .
+                '</select>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
         ],
         [
             'title' => 'Range',
@@ -271,6 +380,11 @@ return [
                     'attributes' => ['id' => 'customRange1'],
                 ]));
             },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+            'expected' => '<label class="form-label" for="customRange1">Example range</label>' . PHP_EOL .
+                '<input type="range" name="custom_range" id="customRange1" class="custom-range" value=""/>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
         ],
         [
             'title' => 'File browser',
@@ -289,6 +403,10 @@ return [
                     'attributes' => ['id' => 'customFile'],
                 ]));
             },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+            'expected' => '<input type="file" name="custom_file" id="customFile"/>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
             'tests' => [
                 [
                     'title' => 'Translating or customizing the strings with HTML',
@@ -310,6 +428,10 @@ return [
                             'attributes' => ['id' => 'customFileLangHTML'],
                         ]));
                     },
+<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Forms/CustomForms.php
+=======
+                    'expected' => '<input type="file" name="custom_file" id="customFileLangHTML"/>',
+>>>>>>> fix: form tests:tests/TestSuite/Documentation/Components/Forms/CustomForms.php
                 ],
             ],
         ],

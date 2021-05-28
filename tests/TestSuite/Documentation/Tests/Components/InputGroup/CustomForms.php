@@ -7,7 +7,7 @@ return [
     'tests' => [
         [
             'title' => 'Custom select',
-            'url' => '%bootstrap-url%/components/input-group/#custom-select',
+            'url' => '%bootstrap-url%/components/input-group/#form-select',
             'rendering' => function (\Laminas\View\Renderer\PhpRenderer $oView) {
                 $oFactory = new \Laminas\Form\Factory();
 
@@ -196,7 +196,6 @@ return [
                     ],
                 ]));
             },
-
         ],
     ],
 ];
