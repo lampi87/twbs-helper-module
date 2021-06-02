@@ -71,7 +71,10 @@ class ButtonToolbar extends \TwbsHelper\View\Helper\AbstractHtmlElement
     {
         if (is_array($oItem)) {
             if (isset($oItem['buttons'])) {
-                return   $this->getButtonGroupHelper()->__invoke($oItem['buttons'], $oItem['options'] ?? []);
+                return $this->getButtonGroupHelper()->__invoke(
+                    $oItem['buttons'],
+                    $oItem['options'] ?? []
+                );
             }
             $oFactory = new \Laminas\Form\Factory();
             $oItem = $oFactory->create($oItem);
