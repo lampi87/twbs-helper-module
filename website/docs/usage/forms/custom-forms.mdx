@@ -1,0 +1,574 @@
+---
+sidebar_position: 7
+label: Custom forms
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import HtmlCode from "../../../src/components/HtmlCode.tsx";
+
+# Custom forms
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#custom-forms)
+
+## Checkboxes and radios
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#checkboxes-and-radios-1)
+
+### Checkboxes
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#checkboxes)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="custom-checkbox custom-control">
+    <input type="checkbox" name="custom_checkbox" id="customCheck1" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="customCheck1">Check this custom checkbox</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_checkbox',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Check this custom checkbox',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+                'custom'             => true,
+            ],
+            'attributes' => [    'id' => 'customCheck1'    ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+### Radios
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#checkboxes)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="form-check">
+    <input type="radio" name="customRadio" class="form-check-input" id="customRadio1" value="1"></input>
+    <label class="form-check-label" for="customRadio1">Toggle this custom radio</label>
+</div>
+<div class="form-check">
+    <input type="radio" name="customRadio" class="form-check-input" id="customRadio2" value="2"></input>
+    <label class="form-check-label" for="customRadio2">Or toggle this other custom radio</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'customRadio',
+            'type'    => 'radio',
+            'options' => [
+                'custom'        => true,
+                'value_options' => [
+                    [
+                        'label'      => 'Toggle this custom radio',
+                        'value'      => '1',
+                        'attributes' => ['id' => 'customRadio1'],
+                    ],
+                    [
+                        'label'      => 'Or toggle this other custom radio',
+                        'value'      => '2',
+                        'attributes' => ['id' => 'customRadio2'],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+### Inline
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#inline-1)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="form-check form-check-inline">
+    <input type="radio" name="customRadioInline1" class="form-check-input" id="customRadioInline1" value="1"></input>
+    <label class="form-check-label" for="customRadioInline1">Toggle this custom radio</label>
+</div>
+<div class="form-check form-check-inline">
+    <input type="radio" name="customRadioInline1" class="form-check-input" id="customRadioInline2" value="2"></input>
+    <label class="form-check-label" for="customRadioInline2">Or toggle this other custom radio</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'customRadioInline1',
+            'type'    => 'radio',
+            'options' => [
+                'layout'        => \TwbsHelper\Form\View\Helper\Form::LAYOUT_INLINE,
+                'custom'        => true,
+                'value_options' => [
+                    [
+                        'label'      => 'Toggle this custom radio',
+                        'value'      => '1',
+                        'attributes' => ['id' => 'customRadioInline1'],
+                    ],
+                    [
+                        'label'      => 'Or toggle this other custom radio',
+                        'value'      => '2',
+                        'attributes' => ['id' => 'customRadioInline2'],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+### Disabled
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#disabled)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="custom-checkbox custom-control">
+    <input type="checkbox" name="custom_checkbox_disabled" id="customCheckDisabled1" disabled="disabled" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="customCheckDisabled1">Check this custom checkbox</label>
+</div>
+<div class="form-check">
+    <input type="radio" name="radioDisabled" disabled="disabled" class="form-check-input" id="customRadioDisabled2" value="1"></input>
+    <label class="form-check-label" for="customRadioDisabled2">Toggle this custom radio</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_checkbox_disabled',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Check this custom checkbox',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+                'custom'             => true,
+            ],
+            'attributes' => [
+                'id'       => 'customCheckDisabled1',
+                'disabled' => true,
+            ],
+        ]
+    )
+);
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'radioDisabled',
+            'type'       => 'radio',
+            'options'    => [
+                'custom'        => true,
+                'value_options' => [
+                    [
+                        'label'      => 'Toggle this custom radio',
+                        'value'      => '1',
+                        'attributes' => ['id' => 'customRadioDisabled2'],
+                    ],
+                ],
+            ],
+            'attributes' => ['disabled' => true],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## Switches
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#switches)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="custom-control custom-switch">
+    <input type="checkbox" name="custom_switch" id="customSwitch1" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="customSwitch1">Toggle this switch element</label>
+</div>
+<div class="custom-control custom-switch">
+    <input type="checkbox" name="custom_switch" id="customSwitch2" disabled="disabled" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="customSwitch2">Disabled switch element</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_switch',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Toggle this switch element',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+                'custom'             => true,
+                'switch'             => true,
+            ],
+            'attributes' => ['id' => 'customSwitch1'],
+        ]
+    )
+);
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_switch',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Disabled switch element',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+                'custom'             => true,
+                'switch'             => true,
+            ],
+            'attributes' => [
+                'id'       => 'customSwitch2',
+                'disabled' => true,
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## Select menu
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#select-menu)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<select name="custom_select" class="form-select">
+    <option value="" selected="selected">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>
+<br></br><br></br>
+<select name="custom_select_lg" class="form-select form-select-lg mb-3">
+    <option value="" selected="selected">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>
+<br></br><br></br>
+<select name="custom_select_sm" class="form-select form-select-sm">
+    <option value="" selected="selected">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>
+<br></br><br></br>
+<select name="custom_select_multiple[]" multiple="multiple" class="form-select">
+    <option value="" selected="selected">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>
+<br></br><br></br>
+<select name="custom_select_size" size="3" class="form-select">
+    <option value="" selected="selected">Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+</select>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formElement(
+    $oFactory->create(
+        [
+            'name'    => 'custom_select',
+            'type'    => 'select',
+            'options' => [
+                'custom'        => true,
+                'empty_option'  => 'Open this select menu',
+                'value_options' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+        ]
+    )->setValue('')
+);
+
+echo '<br/><br/>';
+
+// You may also choose from small and large custom selects to match our similarly sized text inputs.
+echo $this->formElement(
+    $oFactory->create(
+        [
+            'name'       => 'custom_select_lg',
+            'type'       => 'select',
+            'options'    => [
+                'size'          => 'lg',
+                'custom'        => true,
+                'empty_option'  => 'Open this select menu',
+                'value_options' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+            'attributes' => ['class' => 'mb-3'],
+        ]
+    )->setValue('')
+);
+
+echo '<br/><br/>';
+
+echo $this->formElement(
+    $oFactory->create(
+        [
+            'name'    => 'custom_select_sm',
+            'type'    => 'select',
+            'options' => [
+                'size'          => 'sm',
+                'custom'        => true,
+                'empty_option'  => 'Open this select menu',
+                'value_options' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+        ]
+    )->setValue('')
+);
+
+echo '<br/><br/>';
+
+// The multiple attribute is also supported
+echo $this->formElement(
+    $oFactory->create(
+        [
+            'name'       => 'custom_select_multiple',
+            'type'       => 'select',
+            'options'    => [
+                'custom'        => true,
+                'empty_option'  => 'Open this select menu',
+                'value_options' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+            'attributes' => ['multiple' => true],
+        ]
+    )->setValue('')
+);
+
+echo '<br/><br/>';
+
+// As is the size attribute
+echo $this->formElement(
+    $oFactory->create(
+        [
+            'name'       => 'custom_select_size',
+            'type'       => 'select',
+            'options'    => [
+                'custom'        => true,
+                'empty_option'  => 'Open this select menu',
+                'value_options' => [
+                    1 => 'One',
+                    2 => 'Two',
+                    3 => 'Three',
+                ],
+            ],
+            'attributes' => ['size' => 3],
+        ]
+    )->setValue('')
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## Range
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#range)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<label class="form-label" for="customRange1">Example range</label>
+<input type="range" name="custom_range" id="customRange1" class="custom-range" value=""></input>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_range',
+            'type'       => 'range',
+            'options'    => [
+                'custom'     => true,
+                'label'      => 'Example range',
+                'form_group' => false,
+            ],
+            'attributes' => ['id' => 'customRange1'],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## File browser
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#file-browser)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<input type="file" name="custom_file" id="customFile"></input>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_file',
+            'type'       => 'file',
+            'options'    => [
+                'custom'       => true,
+                'custom_label' => 'Choose file',
+                'form_group'   => false,
+            ],
+            'attributes' => ['id' => 'customFile'],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+### Translating or customizing the strings with HTML
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#translating-or-customizing-the-strings-with-html)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<input type="file" name="custom_file" id="customFileLangHTML"></input>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'custom_file',
+            'type'       => 'file',
+            'options'    => [
+                'custom'           => true,
+                'custom_label'     => 'Voeg je document toe',
+                'form_group'       => false,
+                'label_attributes' => [    'data-browse' => 'Bestand kiezen'    ],
+            ],
+            'attributes' => ['id' => 'customFileLangHTML'],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+

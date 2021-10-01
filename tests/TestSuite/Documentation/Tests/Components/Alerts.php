@@ -40,6 +40,7 @@ return [
                             ) . PHP_EOL;
                         }
                     },
+
                 ],
                 [
                     'title' => 'Additional content',

@@ -49,7 +49,6 @@ return [
                     ]) . PHP_EOL;
                 }
             },
-
         ],
         [
             'title' => 'Mixins utilities',

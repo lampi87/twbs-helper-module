@@ -11,7 +11,6 @@ return [
             'rendering' => function (\Laminas\View\Renderer\PhpRenderer $oView) {
                 echo $oView->lead('This is a lead paragraph. It stands out from regular paragraphs.');
             },
-            'expected' => '<p class="lead">This is a lead paragraph. It stands out from regular paragraphs.</p>',
         ],
         [
             'title' => 'Abbreviations',
@@ -156,32 +155,6 @@ return [
                             ],
                         );
                     },
-                    'expected' => '<dl class="row">' . PHP_EOL .
-                        '    <dt class="col-sm-3">Description lists</dt>' . PHP_EOL .
-                        '    <dd class="col-sm-9">A description list is perfect for defining terms.</dd>' . PHP_EOL .
-                        '    <dt class="col-sm-3">Term</dt>' . PHP_EOL .
-                        '    <dd class="col-sm-9">' . PHP_EOL .
-                        '        <p>Definition for the term.</p>' . PHP_EOL .
-                        '        <p>And some more placeholder definition text.</p>' . PHP_EOL .
-                        '    </dd>' . PHP_EOL .
-                        '    <dt class="col-sm-3">Another term</dt>' . PHP_EOL .
-                        '    <dd class="col-sm-9">' .
-                        'This definition is short, so no extra paragraphs or anything.' .
-                        '</dd>' . PHP_EOL .
-                        '    <dt class="col-sm-3&#x20;text-truncate">Truncated term is truncated</dt>' . PHP_EOL .
-                        '    <dd class="col-sm-9">' .
-                        'This can be useful when space is tight. Adds an ellipsis at the end.' .
-                        '</dd>' . PHP_EOL .
-                        '    <dt class="col-sm-3">Nesting</dt>' . PHP_EOL .
-                        '    <dd class="col-sm-9">' . PHP_EOL .
-                        '        <dl class="row">' . PHP_EOL .
-                        '            <dt class="col-sm-4">Nested definition list</dt>' . PHP_EOL .
-                        '            <dd class="col-sm-8">' .
-                        'I heard you like definition lists. Let me put a definition list inside your definition list.' .
-                        '</dd>' . PHP_EOL .
-                        '        </dl>' . PHP_EOL .
-                        '    </dd>' . PHP_EOL .
-                        '</dl>'
                 ],
             ],
         ],

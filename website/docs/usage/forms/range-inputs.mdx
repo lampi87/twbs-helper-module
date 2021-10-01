@@ -1,0 +1,57 @@
+---
+sidebar_position: 3
+label: Range Inputs
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import HtmlCode from "../../../src/components/HtmlCode.tsx";
+
+# Range Inputs
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#range-inputs)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<form action="" method="POST" name="form" role="form" id="form">
+    <div class="mb-3">
+        <label class="form-label" for="formControlRange">Example Range input</label>
+        <input name="range" type="range" id="formControlRange" class="form-control-range" value=""></input>
+    </div>
+</form>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->form(
+    $oFactory->create(
+        [
+            'type'     => 'form',
+            'elements' => [
+                [
+                    'spec' => [
+                        'name'       => 'range',
+                        'options'    => ['label' => 'Example Range input'],
+                        'attributes' => [
+                            'type' => 'range',
+                            'id'   => 'formControlRange',
+                        ],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+

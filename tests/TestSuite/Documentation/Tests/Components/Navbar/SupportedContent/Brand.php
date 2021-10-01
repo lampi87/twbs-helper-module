@@ -69,29 +69,4 @@ return [
             ]
         );
     },
-<<<<<<< HEAD:tests/TestSuite/Documentation/Tests/Components/Navbar/SupportedContent/Brand.php
-
-=======
-    'expected' => '<nav class="bg-light&#x20;navbar&#x20;navbar-light">' . PHP_EOL .
-        '    <a class="navbar-brand" href="&#x23;">Navbar</a>' . PHP_EOL .
-        '</nav>' . PHP_EOL .
-        '<br/>' . PHP_EOL .
-        '<nav class="bg-light&#x20;navbar&#x20;navbar-light">' . PHP_EOL .
-        '    <span class="h1&#x20;mb-0&#x20;navbar-brand">Navbar</span>' . PHP_EOL .
-        '</nav>' . PHP_EOL .
-        '<br/>' . PHP_EOL .
-        '<nav class="bg-light&#x20;navbar&#x20;navbar-light">' . PHP_EOL .
-        '    <a class="navbar-brand" href="&#x23;">' .
-        '<img alt="" height="30" src="&#x2F;twbs-helper-module&#x2F;img&#x2F;docs&#x2F;bootstrap-solid.svg" ' .
-        'width="30" /></a>' . PHP_EOL .
-        '</nav>' . PHP_EOL .
-        '<br/>' . PHP_EOL .
-        '<nav class="bg-light&#x20;navbar&#x20;navbar-light">' . PHP_EOL .
-        '    <a class="navbar-brand" href="&#x23;">' . PHP_EOL .
-        '        <img alt="" class="align-top&#x20;d-inline-block" height="30" ' .
-        'src="&#x2F;twbs-helper-module&#x2F;img&#x2F;docs&#x2F;bootstrap-solid.svg" width="30" />' . PHP_EOL .
-        '        Bootstrap' . PHP_EOL .
-        '    </a>' . PHP_EOL .
-        '</nav>',
->>>>>>> fix: lint component related helpers:tests/TestSuite/Documentation/Components/Navbar/SupportedContent/Brand.php
 ];

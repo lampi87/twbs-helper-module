@@ -1,4 +1,4 @@
-import React, { Children, FunctionComponent, ReactNode } from "react";
+import React, { FunctionComponent, ReactNode } from "react";
 import { createRef, RefObject, useEffect, useState } from "react";
 import Frame from "react-frame-component";
 
@@ -48,11 +48,11 @@ const HtmlCode: FunctionComponent<IProps> = ({
       </head>
       <body>
         <div></div>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@${bootstrapVersion}/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script type="text/javascript">
-          $(function () {
-            $('[data-toggle="popover"]').popover();
+          var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+          var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
           })
         </script>
     </body>

@@ -147,7 +147,6 @@ return [
                             'blockquote' => [
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
                                 'Someone famous in <cite title="Source Title">Source Title</cite>',
-                                ['class' => 'mb-0'],
                             ],
                         ],
                         ['class' => 'p-3'],
@@ -165,7 +164,6 @@ return [
                             'blockquote' => [
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat.',
                                 'Someone famous in <cite title="Source Title">Source Title</cite>',
-                                ['class' => 'mb-0'],
                                 [],
                                 ['class' => 'text-white'],
                             ],
@@ -191,7 +189,6 @@ return [
                                 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. ' .
                                     'Integer posuere erat a ante.',
                                 'Someone famous in <cite title="Source Title">Source Title</cite>',
-                                ['class' => 'mb-0'],
                             ],
                         ],
                         ['class' => 'p-3 text-right'],

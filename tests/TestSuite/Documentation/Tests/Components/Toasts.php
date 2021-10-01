@@ -25,7 +25,6 @@ return [
                             'body' => 'Hello, world! This is a toast message.',
                         ]);
                     },
-
                 ],
                 [
                     'title' => 'Translucent',
@@ -48,7 +47,6 @@ return [
 
                         echo '</div>';
                     },
-
                 ],
                 [
                     'title' => 'Stacking',

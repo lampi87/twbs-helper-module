@@ -1,0 +1,87 @@
+---
+sidebar_position: 8
+label: Button groups
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import HtmlCode from "../../../src/components/HtmlCode.tsx";
+
+# Button groups
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<form action="" method="POST" name="form" role="form" id="form">
+    <div class="mb-3">
+        <label class="form-label" for="email">Email</label>
+        <input name="email" type="email" class="form-control" value=""></input>
+    </div>
+    <div class="btn-group form-group">
+        <button type="button" name="button1" class="btn btn-secondary" value="">Button 1</button>
+        <button type="button" name="button2" class="btn btn-secondary" value="">Button 2</button>
+    </div>
+    <button type="submit" name="submit" class="btn btn-primary" value="">Submit</button>
+</form>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+echo $this->form(
+    $oFactory->create(
+        [
+            'type'     => 'form',
+            'elements' => [
+                [
+                    'spec' => [
+                        'name'       => 'email',
+                        'options'    => ['label' => 'Email'],
+                        'attributes' => ['type' => 'email'],
+                    ],
+                ],
+                [
+                    'spec' => [
+                        'type'    => \Laminas\Form\Element\Button::class,
+                        'name'    => 'button1',
+                        'options' => [
+                            'label'    => 'Button 1',
+                            'row_name' => 'my-button-group',
+                        ],
+                    ],
+                ],
+                [
+                    'spec' => [
+                        'type'    => \Laminas\Form\Element\Button::class,
+                        'name'    => 'button2',
+                        'options' => [
+                            'label'    => 'Button 2',
+                            'row_name' => 'my-button-group',
+                        ],
+                    ],
+                ],
+
+                [
+                    'spec' => [
+                        'type'    => 'submit',
+                        'options' => [
+                            'label'   => 'Submit',
+                            'variant' => 'primary',
+                        ],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+

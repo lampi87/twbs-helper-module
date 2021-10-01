@@ -113,7 +113,6 @@ return [
                     'blockquote' => [
                         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.',
                         'Someone famous in <cite title="Source Title">Source Title</cite>',
-                        ['class' => 'mb-0'],
                     ],
                 ]);
 

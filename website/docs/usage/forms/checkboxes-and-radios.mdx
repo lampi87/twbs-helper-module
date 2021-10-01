@@ -1,0 +1,310 @@
+---
+sidebar_position: 4
+label: Checkboxes and radios
+---
+
+import Tabs from "@theme/Tabs";
+import TabItem from "@theme/TabItem";
+import CodeBlock from "@theme/CodeBlock";
+import HtmlCode from "../../../src/components/HtmlCode.tsx";
+
+# Checkboxes and radios
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#checkboxes-and-radios)
+
+## Default (stacked)
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#default-stacked)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="form-check">
+    <input type="checkbox" name="default-checkbox" id="defaultCheck1" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="defaultCheck1">Default checkbox</label>
+</div>
+<div class="form-check">
+    <input type="checkbox" name="disabled-checkbox" id="defaultCheck2" disabled="disabled" class="form-check-input" value="1"></input>
+    <label class="form-check-label" for="defaultCheck2">Disabled checkbox</label>
+</div>
+<br></br>
+<div class="form-check">
+    <input type="radio" name="exampleRadios" class="form-check-input" id="exampleRadios1" value="option1"></input>
+    <label class="form-check-label" for="exampleRadios1">Default radio</label>
+</div>
+<div class="form-check">
+    <input type="radio" name="exampleRadios" class="form-check-input" id="exampleRadios2" value="option2"></input>
+    <label class="form-check-label" for="exampleRadios2">Second default radio</label>
+</div>
+<div class="form-check">
+    <input type="radio" name="exampleRadios" class="form-check-input" id="exampleRadios3" value="option1" disabled="disabled"></input>
+    <label class="form-check-label" for="exampleRadios3">Disabled radio</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+// Render Default checkbox
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'default-checkbox',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Default checkbox',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+            ],
+            'attributes' => [    'id' => 'defaultCheck1'    ],
+        ]
+    )
+);
+
+// Render Disabled checkbox
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'       => 'disabled-checkbox',
+            'type'       => 'checkbox',
+            'options'    => [
+                'label'              => 'Disabled checkbox',
+                'use_hidden_element' => false,
+                'form_group'         => false,
+            ],
+            'attributes' => [
+                'id'       => 'defaultCheck2',
+                'disabled' => true,
+            ],
+        ]
+    )
+);
+
+echo PHP_EOL.'<br/>';
+
+// Render radio
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'exampleRadios',
+            'type'    => 'radio',
+            'options' => [
+                'form_group'    => false,
+                'value_options' => [
+                    [
+                        'label'      => 'Default radio',
+                        'value'      => 'option1',
+                        'attributes' => ['id' => 'exampleRadios1'],
+                    ],
+                    [
+                        'label'      => 'Second default radio',
+                        'value'      => 'option2',
+                        'attributes' => ['id' => 'exampleRadios2'],
+                    ],
+                    [
+                        'label'      => 'Disabled radio',
+                        'value'      => 'option1',
+                        'disabled'   => true,
+                        'attributes' => ['id' => 'exampleRadios3'],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## Inline
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#inline)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="form-check form-check-inline">
+    <input type="checkbox" name="inlineCheckboxOptions[]" class="form-check-input" id="inlineCheckbox1" value="option1"></input>
+    <label class="form-check-label" for="inlineCheckbox1">1</label>
+</div>
+<div class="form-check form-check-inline">
+    <input type="checkbox" name="inlineCheckboxOptions[]" class="form-check-input" id="inlineCheckbox2" value="option2"></input>
+    <label class="form-check-label" for="inlineCheckbox2">2</label>
+</div>
+<div class="form-check form-check-inline">
+    <input type="checkbox" name="inlineCheckboxOptions[]" class="form-check-input" id="inlineCheckbox3" value="option3" disabled="disabled"></input>
+    <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+</div>
+<br></br>
+<div class="form-check form-check-inline">
+    <input type="radio" name="inlineRadioOptions" class="form-check-input" id="inlineRadio1" value="option1"></input>
+    <label class="form-check-label" for="inlineRadio1">1</label>
+</div>
+<div class="form-check form-check-inline">
+    <input type="radio" name="inlineRadioOptions" class="form-check-input" id="inlineRadio2" value="option2"></input>
+    <label class="form-check-label" for="inlineRadio2">2</label>
+</div>
+<div class="form-check form-check-inline">
+    <input type="radio" name="inlineRadioOptions" class="form-check-input" id="inlineRadio3" value="option3" disabled="disabled"></input>
+    <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+$oFactory = new \Laminas\Form\Factory();
+
+// Render checkbox
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'inlineCheckboxOptions',
+            'type'    => 'multicheckbox',
+            'options' => [
+                'layout'        => 'inline',
+                'form_group'    => false,
+                'value_options' => [
+                    [
+                        'label'      => '1',
+                        'value'      => 'option1',
+                        'attributes' => ['id' => 'inlineCheckbox1'],
+                    ],
+                    [
+                        'label'      => '2',
+                        'value'      => 'option2',
+                        'attributes' => ['id' => 'inlineCheckbox2'],
+                    ],
+                    [
+                        'label'      => '3 (disabled)',
+                        'value'      => 'option3',
+                        'disabled'   => true,
+                        'attributes' => ['id' => 'inlineCheckbox3'],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+echo PHP_EOL.'<br/>';
+
+// Render radio
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'inlineRadioOptions',
+            'type'    => 'radio',
+            'options' => [
+                'layout'        => 'inline',
+                'form_group'    => false,
+                'value_options' => [
+                    [
+                        'label'      => '1',
+                        'value'      => 'option1',
+                        'attributes' => ['id' => 'inlineRadio1'],
+                    ],
+                    [
+                        'label'      => '2',
+                        'value'      => 'option2',
+                        'attributes' => ['id' => 'inlineRadio2'],
+                    ],
+                    [
+                        'label'      => '3 (disabled)',
+                        'value'      => 'option3',
+                        'disabled'   => true,
+                        'attributes' => ['id' => 'inlineRadio3'],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
+## Without labels
+
+[Twitter bootstrap Documentation](https://getbootstrap.com/docs/5.1/forms/#without-labels)
+
+<Tabs>
+<TabItem value="result" label="Result" default>
+  <HtmlCode bootstrapVersion="5.1">
+      <div dangerouslySetInnerHTML={{ __html: `<div class="form-check">
+    <input type="checkbox" name="blankCheckbox[]" class="form-check-input position-static" id="blankCheckbox" aria-label="..." value="option1"></input>
+</div>
+<div class="form-check">
+    <input type="radio" name="blankRadio" class="form-check-input position-static" id="blankRadio1" aria-label="..." value="option1"></input>
+</div>` }}></div>
+  </HtmlCode>
+</TabItem>
+<TabItem value="source" label="Source">
+
+```php
+<?php
+
+
+$oFactory = new \Laminas\Form\Factory();
+
+// Render checkbox
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'blankCheckbox',
+            'type'    => 'multicheckbox',
+            'options' => [
+                'form_group'    => false,
+                'value_options' => [
+                    [
+                        'label'      => '',
+                        'value'      => 'option1',
+                        'attributes' => [
+                            'id'         => 'blankCheckbox',
+                            'aria-label' => '...',
+                        ],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+// Render radio
+echo $this->formRow(
+    $oFactory->create(
+        [
+            'name'    => 'blankRadio',
+            'type'    => 'radio',
+            'options' => [
+                'form_group'    => false,
+                'value_options' => [
+                    [
+                        'label'      => '',
+                        'value'      => 'option1',
+                        'attributes' => [
+                            'id'         => 'blankRadio1',
+                            'aria-label' => '...',
+                        ],
+                    ],
+                ],
+            ],
+        ]
+    )
+);
+
+```
+
+</TabItem>
+</Tabs>
+
