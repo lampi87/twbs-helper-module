@@ -50,7 +50,7 @@ trait HtmlTrait
         bool $bForceIndentation = false,
         string $sIndentation = null
     ): string {
-
+        return $sContent; // Disable this function
         if (!$sContent) {
             return $sContent;
         }
